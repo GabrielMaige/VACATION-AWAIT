@@ -1,0 +1,1467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vacation Awaits Utalii College - Tourism & Hotel Management</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        :root {
+            --primary: #A94064;
+            --secondary: #ff9a3c;
+            --accent: #57cc99;
+            --light: #f8f9fa;
+            --dark: #1a1a2e;
+            --gray: #6c757d;
+            --whatsapp: #25D366;
+            --facebook: #1877F2;
+            --instagram: #E4405F;
+        }
+        
+        body {
+            line-height: 1.6;
+            color: white;
+            background-color: var(--dark);
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        section {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: white;
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            width: 70px;
+            height: 4px;
+            background: var(--secondary);
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .section-title p {
+            color: #ddd;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            background-color: var(--primary);
+            color: white;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            background-color: #8a3250;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .btn-accent {
+            background-color: var(--secondary);
+        }
+        
+        .btn-accent:hover {
+            background-color: #e0862e;
+        }
+        
+        .btn-whatsapp {
+            background-color: var(--whatsapp);
+        }
+        
+        .btn-whatsapp:hover {
+            background-color: #1da851;
+        }
+        
+        /* Floating Action Buttons */
+        .floating-buttons {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        .floating-btn {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+            position: relative;
+            text-decoration: none;
+        }
+        
+        .floating-btn:hover {
+            transform: scale(1.1) translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+        }
+        
+        .floating-btn.whatsapp {
+            background-color: var(--whatsapp);
+        }
+        
+        .floating-btn.enrollment {
+            background-color: var(--primary);
+        }
+        
+        .floating-btn.inquiries {
+            background-color: var(--accent);
+        }
+        
+        .floating-btn.back-to-top {
+            background-color: var(--secondary);
+        }
+        
+        .floating-btn .btn-tooltip {
+            position: absolute;
+            right: 70px;
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 5px;
+            font-size: 0.9rem;
+            white-space: nowrap;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s;
+        }
+        
+        .floating-btn:hover .btn-tooltip {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        /* Special Offer Banner */
+        .offer-banner {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 15px 0;
+            text-align: center;
+            position: sticky;
+            top: 70px;
+            z-index: 999;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        .offer-content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        
+        .offer-tag {
+            background: white;
+            color: var(--primary);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+        
+        .offer-text {
+            font-weight: 600;
+        }
+        
+        .offer-code {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 5px 15px;
+            border-radius: 5px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+        
+        .offer-cta {
+            background: white;
+            color: var(--primary);
+            padding: 8px 20px;
+            border-radius: 5px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        
+        .offer-cta:hover {
+            background: #f0f0f0;
+            transform: translateY(-2px);
+        }
+        
+        /* Header & Navigation */
+        header {
+            background-color: rgba(26, 26, 46, 0.98);
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.3);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo h1 {
+            font-size: 1.8rem;
+            color: white;
+        }
+        
+        .logo span {
+            color: var(--primary);
+        }
+        
+        .logo-slogan {
+            font-style: italic;
+            font-size: 0.9rem;
+            color: #ddd;
+            margin-left: 15px;
+            border-left: 2px solid var(--primary);
+            padding-left: 10px;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 30px;
+        }
+        
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+        
+        nav ul li a:hover {
+            color: var(--secondary);
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: white;
+        }
+        
+        /* Social Media Links */
+        .social-media {
+            display: flex;
+            gap: 15px;
+            margin-left: 30px;
+        }
+        
+        .social-icon {
+            color: white;
+            font-size: 1.2rem;
+            transition: all 0.3s;
+        }
+        
+        .social-icon.facebook:hover {
+            color: var(--facebook);
+        }
+        
+        .social-icon.instagram:hover {
+            color: var(--instagram);
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(169, 64, 100, 0.85), rgba(26, 26, 46, 0.9)), url('https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 180px 0 120px;
+            margin-top: 70px;
+        }
+        
+        .hero h2 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            color: #eee;
+        }
+        
+        .slogan {
+            font-style: italic;
+            font-size: 1.5rem;
+            color: var(--secondary);
+            margin: 30px 0;
+            padding: 15px;
+            border-left: 4px solid var(--secondary);
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 5px;
+            display: inline-block;
+        }
+        
+        /* About Section */
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+        
+        .about-img {
+            flex: 1;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        .about-img img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .about-text {
+            flex: 1;
+        }
+        
+        .about-text h3 {
+            font-size: 1.8rem;
+            color: white;
+            margin-bottom: 20px;
+        }
+        
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-top: 30px;
+        }
+        
+        .info-item {
+            display: flex;
+            align-items: center;
+            background: rgba(169, 64, 100, 0.2);
+            padding: 10px;
+            border-radius: 5px;
+        }
+        
+        .info-item i {
+            color: var(--secondary);
+            margin-right: 10px;
+            font-size: 1.2rem;
+        }
+        
+        /* Services Section */
+        .services {
+            background-color: rgba(26, 26, 46, 0.8);
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .service-card {
+            background-color: rgba(169, 64, 100, 0.1);
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+            border: 1px solid rgba(169, 64, 100, 0.3);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            background-color: rgba(169, 64, 100, 0.2);
+        }
+        
+        .service-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: white;
+        }
+        
+        /* Packages Section */
+        .packages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        
+        .package-card {
+            background-color: rgba(169, 64, 100, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(169, 64, 100, 0.3);
+        }
+        
+        .package-img {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .package-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .package-card:hover .package-img img {
+            transform: scale(1.05);
+        }
+        
+        .package-content {
+            padding: 25px;
+        }
+        
+        .package-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: white;
+        }
+        
+        .package-features {
+            list-style: none;
+            margin: 20px 0;
+        }
+        
+        .package-features li {
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+        }
+        
+        .package-features li i {
+            color: var(--secondary);
+            margin-right: 10px;
+        }
+        
+        .course-duration {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-top: 10px;
+            font-weight: 600;
+        }
+        
+        /* Free Courses Section */
+        .free-courses {
+            background: rgba(26, 26, 46, 0.8);
+        }
+        
+        .free-courses-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .free-course-card {
+            background: linear-gradient(135deg, rgba(169, 64, 100, 0.3), rgba(87, 204, 153, 0.2));
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            border: 1px solid rgba(169, 64, 100, 0.5);
+        }
+        
+        .free-badge {
+            background: var(--accent);
+            color: #1a1a2e;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+        
+        /* Products Section */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 25px;
+        }
+        
+        .product-card {
+            background-color: rgba(169, 64, 100, 0.1);
+            padding: 25px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(169, 64, 100, 0.3);
+        }
+        
+        .product-card:hover {
+            transform: translateY(-5px);
+            background-color: rgba(169, 64, 100, 0.2);
+        }
+        
+        .product-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+        
+        .certificate-badge {
+            background: var(--secondary);
+            color: #1a1a2e;
+            padding: 3px 8px;
+            border-radius: 15px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-top: 10px;
+        }
+        
+        /* Contact Section */
+        .contact {
+            background-color: rgba(26, 26, 46, 0.8);
+        }
+        
+        .contact-container {
+            display: flex;
+            gap: 50px;
+        }
+        
+        .contact-info {
+            flex: 1;
+        }
+        
+        .contact-form {
+            flex: 1;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 30px;
+        }
+        
+        .contact-icon {
+            background-color: var(--primary);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 12px 15px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(169, 64, 100, 0.5);
+            border-radius: 5px;
+            font-size: 1rem;
+            color: white;
+        }
+        
+        .form-group textarea {
+            height: 150px;
+            resize: vertical;
+        }
+        
+        .form-group input::placeholder,
+        .form-group textarea::placeholder,
+        .form-group select::placeholder {
+            color: #ccc;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: rgba(0, 0, 0, 0.9);
+            color: white;
+            padding: 60px 0 20px;
+        }
+        
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-logo h2 {
+            color: white;
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+        
+        .footer-logo span {
+            color: var(--primary);
+        }
+        
+        .footer-links h3,
+        .footer-contact h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-links h3::after,
+        .footer-contact h3::after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 3px;
+            background: var(--secondary);
+            bottom: 0;
+            left: 0;
+        }
+        
+        .footer-links ul {
+            list-style: none;
+        }
+        
+        .footer-links ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links ul li a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links ul li a:hover {
+            color: var(--secondary);
+        }
+        
+        .footer-contact p {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .footer-contact i {
+            margin-right: 10px;
+            color: var(--secondary);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #444;
+            font-size: 0.9rem;
+            color: #aaa;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .about-content {
+                flex-direction: column;
+            }
+            
+            .contact-container {
+                flex-direction: column;
+            }
+            
+            .logo-slogan {
+                display: none;
+            }
+            
+            .offer-content {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .social-media {
+                margin-left: 15px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            nav ul {
+                position: fixed;
+                top: 70px;
+                left: -100%;
+                width: 100%;
+                flex-direction: column;
+                background-color: rgba(26, 26, 46, 0.98);
+                text-align: center;
+                transition: 0.3s;
+                box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
+                padding: 20px 0;
+                backdrop-filter: blur(10px);
+            }
+            
+            nav ul.active {
+                left: 0;
+            }
+            
+            nav ul li {
+                margin: 15px 0;
+            }
+            
+            .social-media {
+                justify-content: center;
+                margin: 15px 0 0;
+            }
+            
+            .hero h2 {
+                font-size: 2.2rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .floating-buttons {
+                bottom: 20px;
+                right: 20px;
+            }
+            
+            .floating-btn {
+                width: 50px;
+                height: 50px;
+                font-size: 1.3rem;
+            }
+            
+            .offer-banner {
+                top: 60px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero {
+                padding: 150px 0 100px;
+                margin-top: 140px;
+            }
+            
+            section {
+                padding: 60px 0;
+            }
+            
+            .packages-grid,
+            .services-grid,
+            .free-courses-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .slogan {
+                font-size: 1.2rem;
+            }
+            
+            .floating-buttons {
+                bottom: 15px;
+                right: 15px;
+            }
+            
+            .floating-btn .btn-tooltip {
+                display: none;
+            }
+            
+            .offer-banner {
+                font-size: 0.9rem;
+            }
+        }
+        
+        /* Animation for floating buttons */
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .floating-btn.whatsapp {
+            animation: float 3s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <h1><span>Vacation</span> Awaits <span style="color: var(--primary);">Utalii College</span></h1>
+            </div>
+            
+            <div class="social-media">
+                <a href="https://facebook.com" target="_blank" class="social-icon facebook">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="https://instagram.com" target="_blank" class="social-icon instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </div>
+            
+            <div class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#home"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="#about"><i class="fas fa-info-circle"></i> About</a></li>
+                    <li><a href="#services"><i class="fas fa-concierge-bell"></i> Services</a></li>
+                    <li><a href="#packages"><i class="fas fa-graduation-cap"></i> Courses</a></li>
+                    <li><a href="#free"><i class="fas fa-gift"></i> Free Courses</a></li>
+                    <li><a href="#contact"><i class="fas fa-phone"></i> Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Special Offer Banner -->
+    <div class="offer-banner">
+        <div class="container">
+            <div class="offer-content">
+                <div class="offer-tag">🎓 LIMITED OFFER</div>
+                <div class="offer-text">Get 10% Off Your First Enrollment (First 20 Students Only)</div>
+                <div class="offer-text">📅 Book before February 28, 2026 • Use code: <strong class="offer-code">MASI2026</strong></div>
+                <a href="https://wa.me/255766992557?text=Hello%20Vacation%20Awaits%20College!%20I%20want%20to%20claim%20the%2010%%20discount%20with%20code%20MASI2026" target="_blank" class="offer-cta">
+                    📞 Call/WhatsApp Now to Claim
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <h2>Vacation <span style="color: var(--primary);">Awaits</span> Utalii College</h2>
+            <p class="slogan">"We give you the key, You choose the door"</p>
+            <p>Premier Tourism & Hotel Management College in Arusha, Tanzania. Offering professional Certificate courses in tourism, hospitality, and language studies with hostel accommodation available.</p>
+            <a href="#contact" class="btn">Enroll Now</a>
+            <a href="https://wa.me/255766992557?text=Hello%20Vacation%20Awaits%20College!%20I%20want%20more%20information%20about%20your%20courses" target="_blank" class="btn btn-whatsapp">
+                <i class="fab fa-whatsapp"></i> WhatsApp Us
+            </a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>About Us</h2>
+                <p>Learn about our institution, credentials, and commitment to excellence in tourism and hospitality education.</p>
+            </div>
+            <div class="about-content">
+                <div class="about-img">
+                    <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="Vacation Awaits Campus">
+                </div>
+                <div class="about-text">
+                    <h3>Your Pathway to Success in Tourism & Hospitality</h3>
+                    <p>Vacation Awaits Utalii College is a fully registered institution located in Mbauda Arusha, Tanzania. We are committed to providing high-quality Certificate courses in various fields of tourism, hospitality, and language studies.</p>
+                    <p>Our institution is registered with BRELA (Business Registrations and Licensing Agency) and The Institute of Adults Education. We offer comprehensive Certificate courses designed to equip students with practical skills and knowledge for successful careers.</p>
+                    
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span><strong>Location:</strong> Mbauda Arusha, Tanzania</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-id-card"></i>
+                            <span><strong>TIN:</strong> 110-191-529</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-certificate"></i>
+                            <span><strong>BRELA Registered</strong></span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-graduation-cap"></i>
+                            <span><strong>Institute of Adults Education</strong></span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-home"></i>
+                            <span><strong>Hostel Available</strong> at College Premise</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-award"></i>
+                            <span><strong>All courses are Certificates</strong></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Services</h2>
+                <p>We offer a wide range of professional services in tourism and hospitality management.</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3>Certificate Courses</h3>
+                    <p>Comprehensive Certificate courses in Tourism Guiding & Wildlife Management, Hotel Management, and Tour Operations.</p>
+                    <span class="course-duration">Short: 6 Months | Long: 1 Year</span>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-concierge-bell"></i>
+                    </div>
+                    <h3>Full Hotel Management</h3>
+                    <p>Professional Certificate training in all aspects of hotel operations including front office, housekeeping, and food service.</p>
+                    <span class="course-duration">1 Year Certificate Program</span>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-plane"></i>
+                    </div>
+                    <h3>Tour Operations</h3>
+                    <p>Complete tour operation management Certificate including costing, reservations, and itinerary planning.</p>
+                    <span class="course-duration">6 Months Certificate Program</span>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-language"></i>
+                    </div>
+                    <h3>Language Training</h3>
+                    <p>Language Certificate courses in English, French, Spanish, and Chinese for tourism professionals.</p>
+                    <span class="course-duration">3-6 Months Certificate Programs</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Courses Section -->
+    <section id="packages">
+        <div class="container">
+            <div class="section-title">
+                <h2>Certificate Course Packages</h2>
+                <p>Choose from our comprehensive Certificate course packages designed for different career paths in tourism and hospitality.</p>
+            </div>
+            <div class="packages-grid">
+                <div class="package-card">
+                    <div class="package-img">
+                        <img src="https://images.unsplash.com/photo-1551632811-561732d1e306?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="Tourism Guiding">
+                    </div>
+                    <div class="package-content">
+                        <h3>Tourism Guiding & Wildlife Management</h3>
+                        <p>Comprehensive Certificate training for aspiring tour guides with focus on wildlife conservation and management.</p>
+                        <ul class="package-features">
+                            <li><i class="fas fa-check"></i> Guiding Skills & Tour Operation</li>
+                            <li><i class="fas fa-check"></i> Wildlife Conservation Principles</li>
+                            <li><i class="fas fa-check"></i> Tour Costing & Reservation</li>
+                            <li><i class="fas fa-check"></i> Air Ticketing</li>
+                        </ul>
+                        <span class="course-duration">6 Months Certificate</span>
+                        <a href="#contact" class="btn" style="margin-top: 15px; display: block;">Enroll Now</a>
+                    </div>
+                </div>
+                
+                <div class="package-card">
+                    <div class="package-img">
+                        <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="Hotel Management">
+                    </div>
+                    <div class="package-content">
+                        <h3>Full Hotel Management Certificate</h3>
+                        <p>Complete hotel operations Certificate training covering all departments of a modern hospitality establishment.</p>
+                        <ul class="package-features">
+                            <li><i class="fas fa-check"></i> Front Office Service & Operations</li>
+                            <li><i class="fas fa-check"></i> Waiter/Waitress Service & Cookery</li>
+                            <li><i class="fas fa-check"></i> Customer Care & Entrepreneurship</li>
+                            <li><i class="fas fa-check"></i> Office Management/Secretarial</li>
+                        </ul>
+                        <span class="course-duration">1 Year Certificate</span>
+                        <a href="#contact" class="btn" style="margin-top: 15px; display: block;">Enroll Now</a>
+                    </div>
+                </div>
+                
+                <div class="package-card">
+                    <div class="package-img">
+                        <img src="https://images.unsplash.com/photo-1578916045372-75e31182c7c0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="Hair Dressing and Beauty">
+                    </div>
+                    <div class="package-content">
+                        <h3>Hair Dressing & Beauty (Urembo na Ususi)</h3>
+                        <p>Specialized Certificate course in professional hair styling, beauty therapy, and personal grooming.</p>
+                        <ul class="package-features">
+                            <li><i class="fas fa-check"></i> Professional Hair Styling</li>
+                            <li><i class="fas fa-check"></i> Beauty Therapy & Treatments</li>
+                            <li><i class="fas fa-check"></i> Makeup Artistry</li>
+                            <li><i class="fas fa-check"></i> Salon Management</li>
+                        </ul>
+                        <span class="course-duration">6 Months Certificate</span>
+                        <a href="#contact" class="btn" style="margin-top: 15px; display: block;">Enroll Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Free Courses Section -->
+    <section id="free" class="free-courses">
+        <div class="container">
+            <div class="section-title">
+                <h2>FREE Courses Included</h2>
+                <p>When you enroll in our Tourism Guiding or Hotel Management Certificate courses, you get these additional courses absolutely FREE!</p>
+            </div>
+            <div class="free-courses-grid">
+                <div class="free-course-card">
+                    <div class="free-badge">FREE</div>
+                    <div class="service-icon">
+                        <i class="fas fa-car"></i>
+                    </div>
+                    <h3>Driving School</h3>
+                    <p>Learn professional driving skills including defensive driving, traffic rules, and vehicle maintenance. Get prepared for your driver's license test.</p>
+                </div>
+                <div class="free-course-card">
+                    <div class="free-badge">FREE</div>
+                    <div class="service-icon">
+                        <i class="fas fa-language"></i>
+                    </div>
+                    <h3>Language Course</h3>
+                    <p>Choose one foreign language: English, French, Spanish, or Chinese. Enhance your communication skills for the tourism and hospitality industry.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products">
+        <div class="container">
+            <div class="section-title">
+                <h2>All Certificate Programs</h2>
+                <p>Explore our comprehensive range of Certificate courses designed to kickstart your career in tourism and hospitality.</p>
+            </div>
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-icon">
+                        <i class="fas fa-hiking"></i>
+                    </div>
+                    <h4>Tourism Guiding & Wildlife Management</h4>
+                    <span class="certificate-badge">6 Month Certificate</span>
+                </div>
+                <div class="product-card">
+                    <div class="product-icon">
+                        <i class="fas fa-hotel"></i>
+                    </div>
+                    <h4>Full Hotel Management</h4>
+                    <span class="certificate-badge">1 Year Certificate</span>
+                </div>
+                <div class="product-card">
+                    <div class="product-icon">
+                        <i class="fas fa-map-marked-alt"></i>
+                    </div>
+                    <h4>Tour Operation Management</h4>
+                    <span class="certificate-badge">6 Month Certificate</span>
+                </div>
+                <div class="product-card">
+                    <div class="product-icon">
+                        <i class="fas fa-plane-departure"></i>
+                    </div>
+                    <h4>Air Ticketing</h4>
+                    <span class="certificate-badge">3 Month Certificate</span>
+                </div>
+                <div class="product-card">
+                    <div class="product-icon">
+                        <i class="fas fa-calculator"></i>
+                    </div>
+                    <h4>Tour Costing & Reservation</h4>
+                    <span class="certificate-badge">3 Month Certificate</span>
+                </div>
+                <div class="product-card">
+                    <div class="product-icon">
+                        <i class="fas fa-concierge-bell"></i>
+                    </div>
+                    <h4>Front Office Service & Operation</h4>
+                    <span class="certificate-badge">6 Month Certificate</span>
+                </div>
+                <div class="product-card">
+                    <div class="product-icon">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <h4>Pastry and Bakery (Cake & Bread)</h4>
+                    <span class="certificate-badge">6 Month Certificate</span>
+                </div>
+                <div class="product-card">
+                    <div class="product-icon">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <h4>Customer Care & Entrepreneurship</h4>
+                    <span class="certificate-badge">3 Month Certificate</span>
+                </div>
+                <div class="product-card">
+                    <div class="product-icon">
+                        <i class="fas fa-laptop"></i>
+                    </div>
+                    <h4>Computer Application</h4>
+                    <span class="certificate-badge">3 Month Certificate</span>
+                </div>
+                <div class="product-card">
+                    <div class="product-icon">
+                        <i class="fas fa-language"></i>
+                    </div>
+                    <h4>Language Courses (EN, FR, ES, CN)</h4>
+                    <span class="certificate-badge">3-6 Month Certificate</span>
+                </div>
+                <div class="product-card">
+                    <div class="product-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h4>Waiter/Waitress Service & Cookery</h4>
+                    <span class="certificate-badge">6 Month Certificate</span>
+                </div>
+                <div class="product-card">
+                    <div class="product-icon">
+                        <i class="fas fa-spa"></i>
+                    </div>
+                    <h4>Hair Dressing & Beauty (Urembo na Ususi)</h4>
+                    <span class="certificate-badge">6 Month Certificate</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Contact Us</h2>
+                <p>Get in touch with us for inquiries, course registration, or any other information you may need.</p>
+            </div>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Contact Information</h3>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div>
+                            <h4>Location</h4>
+                            <p>Mbauda Arusha, Tanzania</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div>
+                            <h4>Phone Numbers</h4>
+                            <p>0766 992 557</p>
+                            <p>0788 904 333</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fab fa-whatsapp"></i>
+                        </div>
+                        <div>
+                            <h4>WhatsApp</h4>
+                            <p>+255 766 992 557</p>
+                            <a href="https://wa.me/255766992557" target="_blank" class="btn btn-whatsapp" style="padding: 8px 15px; margin-top: 5px;">
+                                <i class="fab fa-whatsapp"></i> Message Us
+                            </a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <h4>Email Address</h4>
+                            <p>Vacationawaits26@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div>
+                            <h4>Working Hours</h4>
+                            <p>Monday - Friday: 8:00 AM - 6:00 PM</p>
+                            <p>Saturday: 9:00 AM - 2:00 PM</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-certificate"></i>
+                        </div>
+                        <div>
+                            <h4>Accreditations</h4>
+                            <p>BRELA Registered</p>
+                            <p>Institute of Adults Education</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <h3>Enrollment Form</h3>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <input type="text" placeholder="Your Full Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="Your Email Address" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" placeholder="Your Phone Number" required>
+                        </div>
+                        <div class="form-group">
+                            <select required>
+                                <option value="" disabled selected>Select Course of Interest</option>
+                                <option value="tour-guiding">Tourism Guiding & Wildlife Management</option>
+                                <option value="hotel-management">Full Hotel Management</option>
+                                <option value="hair-beauty">Hair Dressing & Beauty</option>
+                                <option value="tour-operation">Tour Operation Management</option>
+                                <option value="other">Other Course</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <textarea placeholder="Your Message or Questions" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label style="display: block; margin-bottom: 10px;">
+                                <input type="checkbox" required> I want to claim 10% discount with code: <strong>MASI2026</strong>
+                            </label>
+                        </div>
+                        <button type="submit" class="btn">Send Enrollment Request</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-logo">
+                    <h2><span>Vacation</span> Awaits <span style="color: var(--primary);">Utalii College</span></h2>
+                    <p class="slogan" style="font-style: italic; color: var(--secondary); margin: 10px 0;">"We give you the key, You choose the door"</p>
+                    <p>Premier Tourism & Hotel Management College in Tanzania. Providing quality Certificate education and training since establishment.</p>
+                    <div class="social-media" style="margin: 20px 0 0; justify-content: flex-start;">
+                        <a href="https://facebook.com" target="_blank" class="social-icon facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://instagram.com" target="_blank" class="social-icon instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://wa.me/255766992557" target="_blank" class="social-icon" style="color: var(--whatsapp);">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home"><i class="fas fa-home"></i> Home</a></li>
+                        <li><a href="#about"><i class="fas fa-info-circle"></i> About Us</a></li>
+                        <li><a href="#services"><i class="fas fa-concierge-bell"></i> Services</a></li>
+                        <li><a href="#packages"><i class="fas fa-graduation-cap"></i> Courses</a></li>
+                        <li><a href="#free"><i class="fas fa-gift"></i> Free Courses</a></li>
+                        <li><a href="#products"><i class="fas fa-book"></i> All Programs</a></li>
+                        <li><a href="#contact"><i class="fas fa-phone"></i> Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h3>Contact Info</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Mbauda Arusha, Tanzania</p>
+                    <p><i class="fas fa-phone"></i> 0766 992 557 / 0788 904 333</p>
+                    <p><i class="fab fa-whatsapp"></i> +255 766 992 557</p>
+                    <p><i class="fas fa-envelope"></i> Vacationawaits26@gmail.com</p>
+                    <p><i class="fas fa-id-card"></i> TIN: 110-191-529</p>
+                    <p><i class="fas fa-certificate"></i> BRELA Registered</p>
+                    <p><i class="fas fa-graduation-cap"></i> Institute of Adults Education</p>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 Vacation Awaits Utalii College. All rights reserved. | All courses offered are Certificate programs</p>
+                <p style="margin-top: 10px;"><strong>Limited Offer:</strong> Get 10% Off Your First Enrollment (First 20 Students) | Use code: <strong>MASI2026</strong> | Book before February 28, 2026</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Action Buttons -->
+    <div class="floating-buttons">
+        <a href="https://wa.me/255766992557" target="_blank" class="floating-btn whatsapp">
+            <i class="fab fa-whatsapp"></i>
+            <span class="btn-tooltip">Chat on WhatsApp</span>
+        </a>
+        
+        <a href="#contact" class="floating-btn enrollment">
+            <i class="fas fa-user-graduate"></i>
+            <span class="btn-tooltip">Enroll Now</span>
+        </a>
+        
+        <a href="tel:+255766992557" class="floating-btn inquiries">
+            <i class="fas fa-phone"></i>
+            <span class="btn-tooltip">Call Now</span>
+        </a>
+        
+        <a href="#home" class="floating-btn back-to-top">
+            <i class="fas fa-arrow-up"></i>
+            <span class="btn-tooltip">Back to Top</span>
+        </a>
+    </div>
+
+    <script>
+        // Mobile Menu Toggle
+        document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+            document.querySelector('nav ul').classList.toggle('active');
+        });
+        
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('nav ul li a').forEach(link => {
+            link.addEventListener('click', function() {
+                document.querySelector('nav ul').classList.remove('active');
+            });
+        });
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('nav a, .btn[href^="#"], .back-to-top').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                if(this.getAttribute('href').startsWith('#')) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if(targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if(targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 70,
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+            });
+        });
+        
+        // Form submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your enrollment request! We will contact you soon with more information about your 10% discount with code MASI2026.');
+            this.reset();
+        });
+        
+        // Sticky header
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            const offerBanner = document.querySelector('.offer-banner');
+            const scrollTop = window.scrollY;
+            
+            if (scrollTop > 100) {
+                header.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.5)';
+                header.style.backgroundColor = 'rgba(26, 26, 46, 0.98)';
+            } else {
+                header.style.boxShadow = '0 2px 15px rgba(0, 0, 0, 0.3)';
+                header.style.backgroundColor = 'rgba(26, 26, 46, 0.95)';
+            }
+            
+            // Adjust hero margin based on offer banner visibility
+            if (scrollTop > 50) {
+                document.querySelector('.hero').style.marginTop = '140px';
+            } else {
+                document.querySelector('.hero').style.marginTop = '70px';
+            }
+        });
+        
+        // Back to top button visibility
+        window.addEventListener('scroll', function() {
+            const backToTopBtn = document.querySelector('.back-to-top');
+            if (window.scrollY > 300) {
+                backToTopBtn.style.display = 'flex';
+            } else {
+                backToTopBtn.style.display = 'none';
+            }
+        });
+        
+        // Initialize back to top button
+        document.querySelector('.back-to-top').style.display = 'none';
+        
+        // WhatsApp pre-filled message for enrollment
+        const whatsappEnrollBtn = document.createElement('a');
+        whatsappEnrollBtn.href = "https://wa.me/255766992557?text=Hello%20Vacation%20Awaits%20College!%20I%20want%20to%20enroll%20in%20a%20course%20and%20claim%20the%2010%%20discount%20with%20code%20MASI2026";
+        whatsappEnrollBtn.target = "_blank";
+        whatsappEnrollBtn.className = "btn btn-whatsapp";
+        whatsappEnrollBtn.innerHTML = '<i class="fab fa-whatsapp"></i> Enroll via WhatsApp';
+        whatsappEnrollBtn.style.marginLeft = "10px";
+        
+        // Add WhatsApp enrollment button to hero section
+        document.querySelector('.hero .container').appendChild(whatsappEnrollBtn);
+        
+        // Add current year to copyright
+        document.querySelector('.copyright p').innerHTML = document.querySelector('.copyright p').innerHTML.replace('2023', new Date().getFullYear());
+    </script>
+</body>
+</html>
