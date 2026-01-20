@@ -230,7 +230,7 @@
             transform: translateY(-2px);
         }
         
-        /* Header & Navigation */
+        /* Header & Navigation with Logo */
         header {
             background-color: rgba(26, 26, 46, 0.98);
             box-shadow: 0 2px 15px rgba(0, 0, 0, 0.3);
@@ -245,20 +245,33 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 15px 0;
+            padding: 10px 0;
         }
         
-        .logo {
+        .logo-container {
             display: flex;
             align-items: center;
+            gap: 15px;
         }
         
-        .logo h1 {
+        .logo-img {
+            height: 60px;
+            width: auto;
+            border-radius: 5px;
+        }
+        
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .logo-text h1 {
             font-size: 1.8rem;
             color: white;
+            line-height: 1.2;
         }
         
-        .logo span {
+        .logo-text span {
             color: var(--primary);
         }
         
@@ -266,9 +279,7 @@
             font-style: italic;
             font-size: 0.9rem;
             color: #ddd;
-            margin-left: 15px;
-            border-left: 2px solid var(--primary);
-            padding-left: 10px;
+            margin-top: 5px;
         }
         
         nav ul {
@@ -285,6 +296,9 @@
             color: white;
             font-weight: 600;
             transition: color 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 5px;
         }
         
         nav ul li a:hover {
@@ -658,10 +672,22 @@
             margin-bottom: 40px;
         }
         
+        .footer-logo {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .footer-logo-img {
+            height: 70px;
+            width: auto;
+            margin-bottom: 15px;
+            border-radius: 5px;
+        }
+        
         .footer-logo h2 {
             color: white;
             font-size: 1.8rem;
-            margin-bottom: 15px;
+            margin-bottom: 10px;
         }
         
         .footer-logo span {
@@ -734,10 +760,6 @@
                 flex-direction: column;
             }
             
-            .logo-slogan {
-                display: none;
-            }
-            
             .offer-content {
                 flex-direction: column;
                 gap: 10px;
@@ -806,6 +828,14 @@
             .offer-banner {
                 top: 60px;
             }
+            
+            .logo-text h1 {
+                font-size: 1.5rem;
+            }
+            
+            .logo-img {
+                height: 50px;
+            }
         }
         
         @media (max-width: 576px) {
@@ -840,6 +870,18 @@
             .offer-banner {
                 font-size: 0.9rem;
             }
+            
+            .logo-container {
+                gap: 10px;
+            }
+            
+            .logo-img {
+                height: 45px;
+            }
+            
+            .logo-text h1 {
+                font-size: 1.3rem;
+            }
         }
         
         /* Animation for floating buttons */
@@ -857,8 +899,13 @@
     <!-- Header & Navigation -->
     <header>
         <div class="container header-container">
-            <div class="logo">
-                <h1><span>Vacation</span> Awaits <span style="color: var(--primary);">Utalii College</span></h1>
+            <div class="logo-container">
+                <!-- Logo Image - Replace with your actual logo -->
+                <img src="https://via.placeholder.com/200x80/A94064/FFFFFF?text=VACATION+AWAITS+LOGO" alt="Vacation Awaits Utalii College Logo" class="logo-img">
+                <div class="logo-text">
+                    <h1><span>Vacation</span> Awaits <span style="color: var(--primary);">Utalii College</span></h1>
+                    <p class="logo-slogan">"We give you the key, You choose the door"</p>
+                </div>
             </div>
             
             <div class="social-media">
@@ -1306,8 +1353,10 @@
         <div class="container">
             <div class="footer-container">
                 <div class="footer-logo">
+                    <!-- Footer Logo - Replace with your actual logo -->
+                    <img src="logo.png" alt="Vacation Awaits Utalii College Logo" class="footer-logo-img">
                     <h2><span>Vacation</span> Awaits <span style="color: var(--primary);">Utalii College</span></h2>
-                    <p class="slogan" style="font-style: italic; color: var(--secondary); margin: 10px 0;">"We give you the key, You choose the door"</p>
+                    <p class="logo-slogan" style="font-style: italic; color: var(--secondary); margin: 10px 0;">"We give you the key, You choose the door"</p>
                     <p>Premier Tourism & Hotel Management College in Tanzania. Providing quality Certificate education and training since establishment.</p>
                     <div class="social-media" style="margin: 20px 0 0; justify-content: flex-start;">
                         <a href="https://facebook.com" target="_blank" class="social-icon facebook">
