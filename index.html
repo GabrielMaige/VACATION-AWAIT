@@ -472,20 +472,23 @@
         }
         
         .package-img {
-            height: 200px;
-            overflow: hidden;
-        }
+    width: 100%;
+    height: 230px;          /* consistent height for all cards */
+    overflow: hidden;
+}
+.package-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;      /* ensures perfect fit */
+    object-position: center;
+    display: block;
+    transition: transform 0.5s ease;
+}
         
-        .package-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s;
-        }
-        
-        .package-card:hover .package-img img {
-            transform: scale(1.05);
-        }
+      .package-card:hover .package-img img {
+    transform: scale(1.05);
+}
+
         
         .package-content {
             padding: 25px;
